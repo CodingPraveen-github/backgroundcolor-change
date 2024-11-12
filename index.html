@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Change</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #fe4567;
+            transition: background 3s;
+        }
+        lable{
+            color: white;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div id="speacial">
+        <label for=""> Choose color</label>
+        <input type="color" id="color">
+    </div>
+
+    <script>
+        // let colorele = document.getElementById('color');
+        //colorele.oninput = function() {
+           // document.body.style.background = this.value;
+       // } (or)
+      // colorele.addEventListener('input',function(){   
+       // document.body.style.background = this.value    
+       //});
+        function bgchange(){
+            let s = "0123456789abcdef";
+            let color = "#";
+            for(i=0;i<6;i++){
+                let index = Math.floor(Math.random()*16)
+                color = color+s[index]
+            }
+            document.body.style.background = color
+        }
+        setInterval(bgchange,1000)
+    </script>
+    
+</body>
+</html>
